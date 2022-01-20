@@ -1,0 +1,146 @@
+.body{
+    padding: 0;
+    margin: 0;
+}
+.container{
+    width: 1000px;
+    height: 500px;
+    margin: 20px auto;
+    min-height: 10px;
+    display: flex;
+}
+.gameField{
+    width: 50%;
+    height: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 100px;
+}
+.gameField__button{
+    box-sizing: border-box;
+    width: 50%;
+    height: 50%;
+    opacity: 0.5;
+    cursor: pointer;
+    transition: opacity 0.1s ease-in-out;
+}
+.button1{
+    background: red;
+    border-radius: 150px 0 0 0;
+}
+.button1:hover{
+    border-top: 5px solid #000;
+    border-left: 5px solid #000;
+}
+.button2{
+background: green;
+border-radius: 0 150px 0 0;
+}
+.button2:hover{
+    border-top: 5px solid #000;
+    border-right: 5px solid #000;
+}
+.button3{
+background: rgb(255, 196, 0);
+border-radius: 0 0 0 150px;
+}
+.button3:hover{
+    border-bottom: 5px solid #000;
+    border-left: 5px solid #000;
+}
+.button4{
+background: blue;
+border-radius: 0 0 150px 0;
+}
+.button4:hover{
+    border-bottom: 5px solid #000;
+    border-right: 5px solid #000;
+}
+.button__active{
+    opacity: 1;
+}
+
+.controlField{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+.controlField__startButton{
+    padding: 5px 10px;
+    margin-top: 150px;
+}
+.controlField__status{
+    margin-top: 30px;
+    display: inline-block;
+    max-width: 100%;
+}
+.controlField__level{
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+}
+label{
+    margin-top: 15px;
+}
+
+@media screen and (max-width:1000px) {
+    *{
+        box-sizing: border-box;
+    }
+    .container{
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
+    .gameField{
+        width: 100%;
+        height: 40%;
+        display: flex;
+        flex-wrap: wrap;
+        padding: 40px;
+        /* align-items: center; */
+        align-content: center;
+        justify-content: center;
+    }
+    .gameField__button{
+        width: 130px;
+        height: 130px;
+        opacity: 0.2;
+        cursor: auto;
+        transition: opacity 0.2s ease-in-out;
+    }
+    .button__active{
+        opacity: 1;
+    }
+    .controlField{
+        width: 100%;
+        height: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    
+    }
+    .controlField__startButton{
+        padding: 15px 40px;
+        border-radius: 10px;
+        margin: 0;
+        background: green;
+    }
+    .controlField__status{
+        margin-top: 30px;
+        display: inline-block;
+        max-width: 100%;
+    }
+    .controlField__level{
+        display: flex;
+        flex-direction: column;
+        margin-top: 30px;
+    }
+    label{
+        margin-top: 15px;
+    }
+}

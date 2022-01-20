@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="./vue-dev.js"></script>
+    <title>Simon</title>
+</head>
+<body>
+    <div class="container" id="app">
+        <div class="gameField" v-on:[eventname]="listenButton">
+            <div class="gameField__button button1" :class="{button__active: buttons.button1}"></div>
+            <div class="gameField__button button2" :class="{button__active: buttons.button2}"></div>
+            <div class="gameField__button button3" :class="{button__active: buttons.button3}"></div>
+            <div class="gameField__button button4" :class="{button__active: buttons.button4}"></div>
+        </div>
+        <div class="controlField">
+            <button class="controlField__startButton" @click="gameStart">START</button>
+            <span class="controlField__status">{{status}}</span>
+            <div class="controlField__level">
+                <span>Выберите уровень сложности: </span>
+                <label><input v-model="speed" class="controlField__speed" type="radio" name="speed" value="1300" :disabled="speedDisabled"> Легкий</label>
+                <label><input v-model="speed" class="controlField__speed" type="radio" name="speed" value="800" :disabled="speedDisabled"> Средний</label>
+                <label><input v-model="speed" class="controlField__speed" type="radio" name="speed" value="200" :disabled="speedDisabled"> Сложный</label>
+                <label><input v-model="random" class="controlField__random" type="checkbox" name="random" value="true" :disabled="randomDisabled"> Новая комбинация в каждом раунде </label>
+                <label><input v-model="mute" class="controlField__mute" type="checkbox" name="random" value="true"> Без звука </label>
+            </div>
+            <span class="controlField__record">Рекорд: {{record}}</span>
+        </div>
+    </div>
+    <script src="./vueapp.js"></script>
+</body>
+</html>
